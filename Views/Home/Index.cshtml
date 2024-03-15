@@ -1,0 +1,80 @@
+﻿@{
+    
+}
+  <div class="my-2">
+    <form class="row row-cols-lg-auto g-3 align-items-center">
+  <div class="col-12">
+    <label class="visually-hidden" for="inlineFormInputGroupUsername">Search</label>
+    <div class="input-group">
+      <div class="input-group-text"></div>
+      <input type="text" class="form-control" id="" placeholder="Search">
+    </div>
+  </div>
+
+  <div class="col-12">
+    <label class="visually-hidden" for="inlineFormSelectPref">Genre</label>
+    <select class="form-select" id="inlineFormSelectPref">
+      <option selected>Choose...</option>
+      <option value="1">Summer</option>
+      <option value="2">Formal</option>
+      <option value="3">Sheeshable</option>
+    </select>
+  </div>
+
+  <div class="col-12">
+    <button type="submit" class="btn btn-primary">Search</button>
+  </div>
+</form>
+  </div>
+<div class="w-100 mt-4 d-flex flex-wrap" id="adr">
+@for (int i=1;i<=20;i ++){
+<div class="card mx-3 my-4" style="width: 16rem;">
+  <img src="https://picsum.photos/id/237/200/300" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">SUMMER LANG SALABAT</h5>
+    <p class="card-text">
+                    Name:Summer  Price:loyal
+    </p>
+
+                <a href="#" class="btn btn-primary addToCartBtn">ADD TO CART</a>
+            </div>
+</div>
+}
+    
+</div>
+<script>
+    // Select all elements with the class "addToCartBtn" (Add to Cart buttons)
+    var addToCartButtons = document.querySelectorAll('.addToCartBtn');
+
+    // Initialize cart item count
+    var cartItemCount = 0;
+
+    // Select the cart icon and badge
+    var cartIcon = document.getElementById("cartIcon");
+    var badge = cartIcon.querySelector(".badge");
+
+    // Loop through each button and attach a click event listener
+    addToCartButtons.forEach(function (button) {
+        button.addEventListener('click', function () {
+            addToCart(button); // Call the addToCart function when the button is clicked
+        });
+    });
+
+    function addToCart(button) {
+        // Example function, you should implement your own logic here
+        // Update the cart icon or perform any other actions
+        alert("Product added to cart!"); // Show a message indicating the product was added to the cart
+
+        // Increment cart item count
+        cartItemCount++;
+
+        // Update the badge with the new item count
+        badge.innerText = cartItemCount;
+    }
+</script>
+
+
+
+
+
+
